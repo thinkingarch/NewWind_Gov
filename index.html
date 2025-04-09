@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Investment Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Configure Tailwind theme with new color scheme
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              colors: {
+                // Using Emerald as the primary accent
+                'brand-green': '#10b981', // emerald-500
+                'brand-green-light': '#34d399', // emerald-400
+                'brand-green-dark': '#059669', // emerald-600
+                // New bright colors for footer icons
+                'icon-bright-cyan': '#67e8f9', // cyan-300
+                'icon-bright-lime': '#bef264', // lime-300
+                'icon-bright-amber': '#fcd34d', // amber-300
+                // Active state for new bright icons
+                'icon-active-cyan': '#a5f3fc', // cyan-200
+                'icon-active-lime': '#d9f99d', // lime-200
+                'icon-active-amber': '#fde68a', // amber-200
+                // Dark background shades (using Zinc)
+                'dark-bg': '#18181b', // zinc-900
+                'dark-card': '#27272a', // zinc-800
+                'dark-border': '#3f3f46', // zinc-700
+                'dark-text': '#e4e4e7', // zinc-200
+                'dark-text-muted': '#a1a1aa', // zinc-400
+                'dark-heading': '#fafafa', // zinc-50
+              }
+            }
+          }
+        }
+      </script>
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Apply dark mode base styles using config */
+        .dark body {
+            background-color: theme('colors.dark-bg');
+            color: theme('colors.dark-text');
+        }
+        .dark .bg-card { background-color: theme('colors.dark-card'); }
+        .dark .border-card { border-color: theme('colors.dark-border'); }
+        .dark .text-muted { color: theme('colors.dark-text-muted'); }
+        .dark .text-heading { color: theme('colors.dark-heading'); }
+        /* Links use the accent color */
+        .dark .text-link { color: theme('colors.brand-green-light'); }
+        .dark .hover\:text-link-hover:hover { color: theme('colors.brand-green'); }
+
+        /* Tab active style for dark mode - Green */
+        .dark .tab-active {
+            font-weight: 600;
+            border-bottom: 2px solid theme('colors.brand-green-light');
+            color: theme('colors.brand-green-light');
+        }
+        /* Style for active footer button text in dark mode - Green */
+        .dark .footer-nav-active span {
+             color: theme('colors.brand-green-light');
+             font-weight: 600;
+        }
+        /* Page visibility */
+        .page { display: none; flex-grow: 1; width: 100%; }
+        .page-active { display: block; }
+        .page-content { padding-top: 1rem; padding-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-dark-bg text-dark-text"> <div class="container mx-auto max-w-md p-4 min-h-screen flex flex-col border border-dark-border rounded-lg shadow-lg bg-dark-card"> <header class="grid grid-cols-3 items-center mb-2 flex-shrink-0">
+            <div class="flex justify-start">
+                 <button id="home-button-header" class="border border-emerald-500 bg-emerald-600 text-white font-semibold py-1 px-3 rounded-lg shadow hover:bg-emerald-700 transition duration-150 text-sm"> HOME
+                 </button>
+            </div>
+            <div class="flex justify-center">
+                 <img src="data:image/png;base64,PASTE_YOUR_BASE64_ENCODED_LOGO_DATA_HERE"
+                      alt="New Wind Logo"
+                      class="h-8 w-auto rounded"
+                      onerror="this.onerror=null; this.src='https://placehold.co/100x30/10b981/ffffff?text=New+Wind';"> </div>
+            <div class="flex items-center justify-end">
+                <button id="messages-button" class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow hover:bg-emerald-700 transition duration-150 flex-shrink-0" aria-label="Messages"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg" alt="Messages" class="w-5 h-5"/>
+                </button>
+            </div>
+        </header>
+
+        <div class="text-center mb-4 flex-shrink-0">
+             <span class="text-sm text-muted">Good afternoon, Kenya!</span> </div>
+
+        <div id="page-container" class="flex-grow flex flex-col overflow-y-auto">
+
+            <div id="home-page" class="page page-active">
+                <main class="page-content">
+                    <section class="mb-8">
+                        <h2 class="text-lg font-semibold mb-3 p-2 bg-zinc-700 text-emerald-300 rounded-lg">NEW OPPORTUNITIES</h2>
+                        <div class="flex space-x-4 overflow-x-auto pb-4 hide-scrollbar">
+                            <div class="flex-none w-64 bg-card border border-card rounded-lg shadow p-4">
+                                <img src="https://placehold.co/250x150/10b981/ffffff?text=Infra+Project" alt="Infrastructure Project" class="w-full h-32 object-cover rounded-md mb-3" onerror="this.src='https://placehold.co/250x150/3f3f46/a1a1aa?text=Error'">
+                                <h3 class="font-semibold text-md mb-1 text-heading">Nairobi Urban Rail</h3>
+                                <p class="text-sm text-muted mb-1"><span class="font-medium">Sector:</span> Infrastructure</p>
+                                <p class="text-sm text-muted mb-1"><span class="font-medium">Region:</span> Nairobi County</p>
+                                <p class="text-sm text-muted mb-2"><span class="font-medium">Type:</span> PPP</p>
+                                <p class="text-xs text-gray-500">Expansion of light rail network.</p>
+                            </div>
+                            <div class="flex-none w-64 bg-card border border-card rounded-lg shadow p-4">
+                                 <img src="https://placehold.co/250x150/f59e0b/ffffff?text=Agri+Value+Chain" alt="Agriculture Project" class="w-full h-32 object-cover rounded-md mb-3" onerror="this.src='https://placehold.co/250x150/3f3f46/a1a1aa?text=Error'">
+                                <h3 class="font-semibold text-md mb-1 text-heading">Rift Valley Agro-Processing</h3>
+                                <p class="text-sm text-muted mb-1"><span class="font-medium">Sector:</span> Agribusiness</p>
+                                <p class="text-sm text-muted mb-1"><span class="font-medium">Region:</span> Rift Valley</p>
+                                <p class="text-sm text-muted mb-2"><span class="font-medium">Focus:</span> Value Addition</p>
+                                <p class="text-xs text-gray-500">New facilities for export crops.</p>
+                            </div>
+                            <div class="flex-none w-64 bg-card border border-card rounded-lg shadow p-4">
+                                 <img src="https://placehold.co/250x150/06b6d4/ffffff?text=Tourism+Dev" alt="Tourism Project" class="w-full h-32 object-cover rounded-md mb-3" onerror="this.src='https://placehold.co/250x150/3f3f46/a1a1aa?text=Error'">
+                                <h3 class="font-semibold text-md mb-1 text-heading">Coastal Eco-Lodges</h3>
+                                <p class="text-sm text-muted mb-1"><span class="font-medium">Sector:</span> Tourism</p>
+                                <p class="text-sm text-muted mb-1"><span class="font-medium">Region:</span> Coast Province</p>
+                                <p class="text-sm text-muted mb-2"><span class="font-medium">Impact:</span> Sustainable Tourism</p>
+                                <p class="text-xs text-gray-500">Development of eco-friendly lodges.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-8">
+                        <h2 class="text-lg font-semibold mb-3 p-2 bg-zinc-700 text-emerald-300 rounded-lg">YOUR INVESTMENT COMMUNITY</h2>
+                        <div class="flex space-x-6 border-b border-zinc-600 mb-4"> <button class="community-tab py-2 px-1 text-zinc-400 hover:text-emerald-300 tab-active" data-tab="overview">OVERVIEW</button>
+                            <button class="community-tab py-2 px-1 text-zinc-500 hover:text-emerald-300" data-tab="insights">MARKET INSIGHTS</button>
+                            <button class="community-tab py-2 px-1 text-zinc-500 hover:text-emerald-300" data-tab="tips">TIPS</button>
+                        </div>
+                        <div id="community-tab-content" class="p-4 bg-zinc-700 rounded-lg border border-zinc-600 min-h-[150px]"> <p class="text-zinc-400 text-sm mb-4">Find companies and partners based on your criteria.</p>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-zinc-300 mb-2">Companies</h4>
+                                    <ul class="space-y-1 text-zinc-400">
+                                        <li>› Filter by Region</li>
+                                        <li>› Filter by Industry</li>
+                                        <li>› Filter by High ROI Potential</li>
+                                        <li>› Filter by High Impact</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-zinc-300 mb-2">Partners</h4>
+                                     <ul class="space-y-1 text-zinc-400">
+                                        <li>› Filter by Region</li>
+                                        <li>› Filter by Industry</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="mb-8">
+                         <h2 class="text-lg font-semibold mb-3 p-2 bg-zinc-700 text-emerald-300 rounded-lg">PORTRAIT OF THE WEEK</h2>
+                         <div class="p-4 bg-card border border-card rounded-lg shadow">
+                            <h3 class="font-semibold text-md mb-2 text-heading">Kenya Vision 2030: ICT Hub</h3>
+                            <p class="text-sm text-muted">
+                                Highlighting investment opportunities in Kenya's burgeoning tech sector, focusing on Konza Technopolis and digital infrastructure projects aligned with national development goals.
+                            </p>
+                         </div>
+                    </section>
+                </main>
+            </div>
+
+            <div id="messages-page" class="page">
+                <main class="page-content">
+                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">Messages</h2>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-card border border-card rounded-lg shadow hover:bg-zinc-700 transition duration-150 cursor-pointer">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-semibold text-zinc-200">Deal Room Alert</span>
+                                <span class="text-xs text-zinc-500">1 hour ago</span>
+                            </div>
+                            <p class="text-sm text-zinc-300 font-medium mb-1">Update: Nairobi Urban Rail PPP</span></p>
+                            <p class="text-sm text-zinc-400 truncate">Expression of Interest deadline approaching...</p>
+                        </div>
+                         <div class="p-4 bg-card border border-card rounded-lg shadow hover:bg-zinc-700 transition duration-150 cursor-pointer">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-semibold text-zinc-200">Investment Promotion Agency</span>
+                                <span class="text-xs text-zinc-500">Yesterday</span>
+                            </div>
+                            <p class="text-sm text-zinc-300 font-medium mb-1">New Incentives for Agribusiness Investors</span></p>
+                            <p class="text-sm text-zinc-400 truncate">Details on tax breaks and land allocation for agro-processing...</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div id="kenya-deal-rooms-page" class="page">
+                 <main class="page-content">
+                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">Kenya Deal Rooms</h2>
+                    <div class="p-4 bg-card border border-card rounded-lg shadow">
+                        <p class="text-muted">Content for Kenya specific deal rooms will appear here. This section could list active government-facilitated deals, PPP opportunities, etc.</p>
+                        <div class="mt-4 space-y-3">
+                             <div class="border-b border-zinc-700 pb-2">
+                                <h4 class="font-semibold text-zinc-300">Nairobi Urban Rail - Phase 2</h4>
+                                <p class="text-sm text-muted">Status: Open for EOI</p>
+                             </div>
+                             <div class="border-b border-zinc-700 pb-2">
+                                <h4 class="font-semibold text-zinc-300">Lamu Port Infrastructure Bond</h4>
+                                <p class="text-sm text-muted">Status: Fundraising Active</p>
+                             </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div id="state-backed-page" class="page">
+                <main class="page-content">
+                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">State-Backed Companies</h2>
+                     <div class="p-4 bg-card border border-card rounded-lg shadow">
+                        <p class="text-muted">Information about state-backed companies seeking investment or partnership will be listed here.</p>
+                         <div class="mt-4 space-y-3">
+                             <div class="border-b border-zinc-700 pb-2">
+                                <h4 class="font-semibold text-zinc-300">Kenya Power (KPLC) - Green Energy Projects</h4>
+                                <p class="text-sm text-muted">Seeking partners for solar initiatives.</p>
+                             </div>
+                             <div class="border-b border-zinc-700 pb-2">
+                                <h4 class="font-semibold text-zinc-300">KenGen - Geothermal Expansion</h4>
+                                <p class="text-sm text-muted">Investment opportunities in Olkaria VI.</p>
+                             </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div id="notifications-page" class="page">
+                 <main class="page-content">
+                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">Notifications</h2>
+                     <div class="space-y-4">
+                        <div class="p-3 bg-card border border-card rounded-lg shadow">
+                            <p class="text-sm text-zinc-300"><span class="font-semibold text-emerald-400">[Policy Update]</span> New guidelines for foreign investment in ICT sector released.</p>
+                            <p class="text-xs text-zinc-500 text-right">1 day ago</p>
+                        </div>
+                        <div class="p-3 bg-card border border-card rounded-lg shadow">
+                            <p class="text-sm text-zinc-300"><span class="font-semibold text-amber-400">[Event]</span> Investment Forum: Manufacturing Sector - May 15th.</p>
+                             <p class="text-xs text-zinc-500 text-right">3 days ago</p>
+                        </div>
+                         <div class="p-3 bg-card border border-card rounded-lg shadow">
+                            <p class="text-sm text-zinc-300"><span class="font-semibold text-cyan-400">[Deal Room]</span> Documents updated for Rift Valley Agro-Processing EOI.</p>
+                             <p class="text-xs text-zinc-500 text-right">5 days ago</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+        </div> <footer class="border-t border-dark-border pt-4 mt-auto flex-shrink-0">
+            <nav class="flex justify-around">
+                <button id="kenya-deal-rooms-button" data-page="kenya-deal-rooms-page" class="footer-nav-button flex flex-col items-center text-center text-xs w-1/3 group">
+                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layout-list.svg" alt="Deal Rooms" class="w-6 h-6 mb-1 text-icon-bright-cyan group-hover:text-icon-active-cyan"/>
+                    <span class="text-zinc-400 group-hover:text-brand-green-light">KENYA DEAL ROOMS</span>
+                </button>
+                <button id="state-backed-button" data-page="state-backed-page" class="footer-nav-button flex flex-col items-center text-center text-xs w-1/3 group">
+                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/building-2.svg" alt="State-Backed Companies" class="w-6 h-6 mb-1 text-icon-bright-lime group-hover:text-icon-active-lime"/>
+                    <span class="text-zinc-400 group-hover:text-brand-green-light">STATE-BACKED COS.</span>
+                </button>
+                <button id="notifications-button" data-page="notifications-page" class="footer-nav-button flex flex-col items-center text-center text-xs w-1/3 group">
+                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bell.svg" alt="Notifications" class="w-6 h-6 mb-1 text-icon-bright-amber group-hover:text-icon-active-amber"/>
+                     <span class="text-zinc-400 group-hover:text-brand-green-light">NOTIFICATIONS</span>
+                </button>
+            </nav>
+        </footer>
+
+    </div> <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page');
+            const homeButtonHeader = document.getElementById('home-button-header');
+            const messagesButton = document.getElementById('messages-button'); // Still links to generic messages page
+            const footerNavButtons = document.querySelectorAll('.footer-nav-button');
+            const communityTabs = document.querySelectorAll('.community-tab');
+            const communityTabContent = document.getElementById('community-tab-content');
+
+            // Updated icon colors mapping for the new footer
+            const iconColors = {
+                'kenya-deal-rooms-page': { default: 'text-icon-bright-cyan', active: 'text-icon-active-cyan' },
+                'state-backed-page': { default: 'text-icon-bright-lime', active: 'text-icon-active-lime' },
+                'notifications-page': { default: 'text-icon-bright-amber', active: 'text-icon-active-amber' }
+            };
+             const defaultIconColor = 'text-zinc-400'; // Fallback
+
+            // --- Page Navigation Function ---
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.remove('page-active'));
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('page-active');
+                } else {
+                    console.error(`Page with ID ${pageId} not found.`);
+                    document.getElementById('home-page').classList.add('page-active'); // Fallback
+                    pageId = 'home-page';
+                }
+
+                // --- Update Footer Navigation Highlighting ---
+                footerNavButtons.forEach(button => {
+                    const buttonPageId = button.dataset.page;
+                    const textSpan = button.querySelector('span');
+                    const iconImg = button.querySelector('img');
+                    const colors = iconColors[buttonPageId] || { default: defaultIconColor, active: 'text-brand-green-light' };
+
+                    // Reset styles
+                    textSpan.classList.remove('footer-nav-active', 'text-brand-green-light', 'font-semibold');
+                    textSpan.classList.add('text-zinc-400');
+                    iconImg.classList.remove(colors.active);
+                    Object.values(iconColors).forEach(c => { // Robust reset
+                         iconImg.classList.remove(c.default, c.active);
+                    });
+                    iconImg.classList.add(colors.default);
+
+                    // Apply active styles
+                    if (buttonPageId === pageId) {
+                        textSpan.classList.add('footer-nav-active');
+                        textSpan.classList.remove('text-zinc-400');
+                        textSpan.classList.add('text-brand-green-light', 'font-semibold');
+                        iconImg.classList.remove(colors.default);
+                        iconImg.classList.add(colors.active);
+                    }
+                });
+
+                document.getElementById('page-container').scrollTop = 0; // Scroll to top
+            }
+
+            // --- Event Listeners ---
+            if(homeButtonHeader) {
+                homeButtonHeader.addEventListener('click', () => showPage('home-page'));
+            }
+            if(messagesButton) { // Messages button still goes to the generic messages page
+                messagesButton.addEventListener('click', () => showPage('messages-page'));
+            }
+            footerNavButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const pageId = button.dataset.page;
+                    if (pageId) showPage(pageId);
+                });
+            });
+
+            // Investment Community Tabs (Home Page)
+             if (communityTabs.length > 0 && communityTabContent) {
+                communityTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        communityTabs.forEach(t => t.classList.remove('tab-active'));
+                        communityTabs.forEach(t => t.classList.add('text-zinc-500')); // Reset color
+                        tab.classList.add('tab-active');
+                        tab.classList.remove('text-zinc-500');
+
+                        const tabName = tab.dataset.tab;
+                        let content = '';
+                        if (tabName === 'overview') {
+                             content = `
+                                <p class="text-zinc-400 text-sm mb-4">Find companies and partners based on your criteria.</p>
+                                <div class="grid grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <h4 class="font-semibold text-zinc-300 mb-2">Companies</h4>
+                                        <ul class="space-y-1 text-zinc-400">
+                                            <li>› Filter by Region</li>
+                                            <li>› Filter by Industry</li>
+                                            <li>› Filter by High ROI Potential</li>
+                                            <li>› Filter by High Impact</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-zinc-300 mb-2">Partners</h4>
+                                         <ul class="space-y-1 text-zinc-400">
+                                            <li>› Filter by Region</li>
+                                            <li>› Filter by Industry</li>
+                                        </ul>
+                                    </div>
+                                </div>`;
+                        } else if (tabName === 'insights') {
+                            content = '<p class="text-zinc-400 text-sm">Market insights relevant to investing in Kenya will appear here. This could include sector reports, economic forecasts, and regulatory updates.</p>';
+                        } else if (tabName === 'tips') {
+                            content = '<p class="text-zinc-400 text-sm">Tips for navigating the investment landscape in Kenya, including legal advice summaries, cultural notes, and success stories.</p>';
+                        }
+                        communityTabContent.innerHTML = content;
+                    });
+                });
+            }
+
+            // --- Initial Page Load ---
+            showPage('home-page');
+        });
+    </script>
+
+</body>
+</html>
