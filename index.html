@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        // Configure Tailwind theme - updated icon colors to white shades
+        // Configure Tailwind theme - icon colors remain white
         tailwind.config = {
           darkMode: 'class',
           theme: {
@@ -102,8 +102,7 @@
         </header>
 
         <div class="text-center mb-4 flex-shrink-0">
-             <span class="text-sm text-muted">Good afternoon, Kenya!</span>
-        </div>
+             <span class="text-sm text-muted">Good morning from Kenya!</span> </div>
 
         <div id="page-container" class="flex-grow flex flex-col overflow-y-auto hide-scrollbar">
 
@@ -147,9 +146,7 @@
                             <button class="community-tab py-2 px-1 text-zinc-500 hover:text-emerald-300" data-tab="tips">TIPS</button>
                         </div>
                         <div id="community-tab-content" class="p-4 bg-zinc-700 rounded-lg border border-zinc-600 min-h-[100px]">
-                            <p class="text-zinc-300 text-sm">
-                                Discover investment-ready companies and potential partners. <br>
-                                Use filters for Region, Industry, ROI, and Impact criteria.
+                            <p class="text-zinc-300 text-sm"> Discover investment communities and potential co-investment partners with shared interests.
                             </p>
                         </div>
                     </section>
@@ -190,39 +187,74 @@
                 </main>
             </div>
 
-            <div id="kenya-deal-rooms-page" class="page">
-                 <main class="page-content">
-                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">Kenya Deal Rooms</h2>
-                    <div class="p-4 bg-card border border-card rounded-lg shadow">
-                        <p class="text-muted">Content for Kenya specific deal rooms will appear here. This section could list active government-facilitated deals, PPP opportunities, etc.</p>
-                        <div class="mt-4 space-y-3">
-                             <div class="border-b border-zinc-700 pb-2">
-                                <h4 class="font-semibold text-zinc-300">Nairobi Urban Rail - Phase 2</h4>
-                                <p class="text-sm text-muted">Status: Open for EOI</p>
-                             </div>
-                             <div class="border-b border-zinc-700 pb-2">
-                                <h4 class="font-semibold text-zinc-300">Lamu Port Infrastructure Bond</h4>
-                                <p class="text-sm text-muted">Status: Fundraising Active</p>
-                             </div>
-                        </div>
+            <div id="choose-kenya-page" class="page">
+                <main class="page-content">
+                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">Choose Kenya: Investment Stimuli</h2>
+                     <div class="p-4 bg-card border border-card rounded-lg shadow">
+                        <p class="text-muted mb-4">Explore key advantages and incentives for investing in Kenya:</p>
+                         <ul class="space-y-3 text-sm">
+                            <li>
+                                <h4 class="font-semibold text-zinc-300">Tax Incentives</h4>
+                                <p class="text-muted ml-2">Reduced corporate tax rates for new investments, VAT exemptions on specific capital goods, investment allowances.</p>
+                            </li>
+                             <li>
+                                <h4 class="font-semibold text-zinc-300">Special Economic Zones (SEZs)</h4>
+                                <p class="text-muted ml-2">Designated zones (e.g., Naivasha, Kisumu) offering superior infrastructure, streamlined regulations, and fiscal benefits.</p>
+                            </li>
+                             <li>
+                                <h4 class="font-semibold text-zinc-300">Infrastructure Development</h4>
+                                <p class="text-muted ml-2">Ongoing projects in energy (geothermal, solar), transport (SGR, ports), and ICT (fiber optic network).</p>
+                            </li>
+                             <li>
+                                <h4 class="font-semibold text-zinc-300">Skilled Workforce</h4>
+                                <p class="text-muted ml-2">Young, educated, and tech-savvy population with strong English proficiency.</p>
+                            </li>
+                             <li>
+                                <h4 class="font-semibold text-zinc-300">Market Access</h4>
+                                <p class="text-muted ml-2">Gateway to the East African Community (EAC) and COMESA markets.</p>
+                            </li>
+                         </ul>
                     </div>
                 </main>
             </div>
 
-            <div id="state-backed-page" class="page">
-                <main class="page-content">
-                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">State-Backed Companies</h2>
-                     <div class="p-4 bg-card border border-card rounded-lg shadow">
-                        <p class="text-muted">Information about state-backed companies seeking investment or partnership will be listed here.</p>
-                         <div class="mt-4 space-y-3">
-                             <div class="border-b border-zinc-700 pb-2">
-                                <h4 class="font-semibold text-zinc-300">Kenya Power (KPLC) - Green Energy Projects</h4>
-                                <p class="text-sm text-muted">Seeking partners for solar initiatives.</p>
+            <div id="dealrooms-page" class="page">
+                 <main class="page-content">
+                    <h2 class="text-xl font-semibold mb-4 text-emerald-300">Company Deal Rooms</h2>
+                    <p class="text-muted mb-4">Access detailed information and engage with specific investment opportunities.</p>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-card border border-card rounded-lg shadow">
+                             <h3 class="font-semibold text-lg mb-2 text-emerald-400">Safi Solar Solutions Ltd.</h3>
+                             <div class="text-sm text-muted mb-3">
+                                 <p><span class="font-medium text-zinc-500">Sector:</span> Renewable Energy</p>
+                                 <p><span class="font-medium text-zinc-500">Stage:</span> Series A</p>
+                                 <p>Provider of affordable solar home systems for off-grid communities.</p>
                              </div>
-                             <div class="border-b border-zinc-700 pb-2">
-                                <h4 class="font-semibold text-zinc-300">KenGen - Geothermal Expansion</h4>
-                                <p class="text-sm text-muted">Investment opportunities in Olkaria VI.</p>
+                             <button class="w-full bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-emerald-700 transition duration-150 text-sm">
+                                Enter Deal Room
+                             </button>
+                        </div>
+                         <div class="p-4 bg-card border border-card rounded-lg shadow">
+                             <h3 class="font-semibold text-lg mb-2 text-emerald-400">Mkulima Connect Technologies</h3>
+                             <div class="text-sm text-muted mb-3">
+                                 <p><span class="font-medium text-zinc-500">Sector:</span> AgTech</p>
+                                 <p><span class="font-medium text-zinc-500">Stage:</span> Seed</p>
+                                 <p>Mobile platform connecting smallholder farmers to markets and financing.</p>
                              </div>
+                             <button class="w-full bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-emerald-700 transition duration-150 text-sm">
+                                Enter Deal Room
+                             </button>
+                        </div>
+                         <div class="p-4 bg-card border border-card rounded-lg shadow">
+                             <h3 class="font-semibold text-lg mb-2 text-emerald-400">AfyaLink Diagnostics</h3>
+                             <div class="text-sm text-muted mb-3">
+                                 <p><span class="font-medium text-zinc-500">Sector:</span> HealthTech</p>
+                                 <p><span class="font-medium text-zinc-500">Stage:</span> Pre-Series A</p>
+                                 <p>Low-cost diagnostic device network for rural clinics.</p>
+                             </div>
+                             <button class="w-full bg-emerald-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-emerald-700 transition duration-150 text-sm">
+                                Enter Deal Room
+                             </button>
                         </div>
                     </div>
                 </main>
@@ -248,17 +280,28 @@
                 </main>
             </div>
 
-        </div> <footer class="border-t border-dark-border pt-2 pb-1 mt-auto flex-shrink-0"> <nav class="flex justify-around items-stretch"> <button id="kenya-deal-rooms-button" data-page="kenya-deal-rooms-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layout-list.svg" alt="Deal Rooms" class="w-6 h-6 mb-1 text-icon-default-white"/>
-                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">KENYA DEAL ROOMS</span>
+        </div> <footer class="border-t border-dark-border pt-2 pb-1 mt-auto flex-shrink-0">
+            <nav class="flex justify-around items-stretch">
+                 <button id="choose-kenya-button" data-page="choose-kenya-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150">
+                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/flag.svg" alt="Choose Kenya" class="w-6 h-6 mb-1 text-icon-default-white"/>
+                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">Choose Kenya</span>
                 </button>
-                <button id="state-backed-button" data-page="state-backed-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/building-2.svg" alt="State-Backed Companies" class="w-6 h-6 mb-1 text-icon-default-white"/>
-                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">STATE-BACKED COS.</span>
+                <button id="dealrooms-button" data-page="dealrooms-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150">
+                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layout-list.svg" alt="DealRooms" class="w-6 h-6 mb-1 text-icon-default-white"/>
+                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">DealRooms</span>
                 </button>
-                <button id="notifications-button" data-page="notifications-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bell.svg" alt="Notifications" class="w-6 h-6 mb-1 text-icon-default-white"/>
-                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">NOTIFICATIONS</span>
+                <button id="notifications-button" data-page="notifications-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150">
+                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bell.svg" alt="Notifications" class="w-6 h-6 mb-1 text-icon-default-white"/>
+                     <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">Notifications</span>
                 </button>
             </nav>
         </footer>
+
+         <div class="mt-4 text-center">
+            <p class="text-xs text-zinc-500">
+                Copyright Ⓒ 2025 Philippe Van Caenegem. The Provider makes no warranties, express or implied, including but not limited to, the implied warranties of merchantability and fitness for a particular purpose. This tool and its content does not constitute financial advice and should not be used as such.
+            </p>
+         </div>
 
     </div> <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -269,24 +312,23 @@
             const communityTabs = document.querySelectorAll('.community-tab');
             const communityTabContent = document.getElementById('community-tab-content');
 
-            // Updated icon colors mapping to use white shades
-            const iconColors = {
-                'kenya-deal-rooms-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' },
-                'state-backed-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' },
+            // Updated icon colors mapping for white shades, matching new page IDs
+            const iconColors = { // Step 2 & 3 update
+                'choose-kenya-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' },
+                'dealrooms-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' },
                 'notifications-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' }
             };
              // Define all possible icon color classes for robust removal
              const allIconColorClasses = [
                 'text-icon-default-white', 'text-icon-active-white',
-                // Include old/other classes just in case, for cleanup
-                 'text-icon-default-green', 'text-icon-active-green',
+                'text-icon-default-green', 'text-icon-active-green',
                 'text-icon-bright-cyan', 'text-icon-active-cyan',
                 'text-icon-bright-lime', 'text-icon-active-lime',
                 'text-icon-bright-amber', 'text-icon-active-amber'
              ];
 
-             const defaultFooterTextColor = 'text-zinc-300'; // Default is lighter
-             const activeFooterTextColor = 'text-brand-green-light'; // Active text color
+             const defaultFooterTextColor = 'text-zinc-300';
+             const activeFooterTextColor = 'text-brand-green-light';
 
             // --- Page Navigation Function ---
             function showPage(pageId) {
@@ -305,25 +347,24 @@
                     const buttonPageId = button.dataset.page;
                     const textSpan = button.querySelector('span');
                     const iconImg = button.querySelector('img');
-                    // Use the updated iconColors map (all white)
+                    // Use the updated iconColors map
                     const colors = iconColors[buttonPageId] || { default: 'text-icon-default-white', active: 'text-icon-active-white' };
 
                     // Reset styles
-                    textSpan.classList.remove('footer-nav-active', activeFooterTextColor); // Remove active text color
-                    textSpan.classList.add(defaultFooterTextColor); // Ensure default text color
+                    textSpan.classList.remove('footer-nav-active', activeFooterTextColor);
+                    textSpan.classList.add(defaultFooterTextColor);
 
                     // Robustly remove all potential icon color classes
                     iconImg.classList.remove(...allIconColorClasses);
                     // Add the correct default white class
                     iconImg.classList.add(colors.default);
 
-                    // Remove active background if applied previously (optional)
-                    button.classList.remove('bg-zinc-700'); // Example active background class
+                    button.classList.remove('bg-zinc-700'); // Remove potential active background
 
                     // Apply active styles
                     if (buttonPageId === pageId) {
-                        textSpan.classList.add('footer-nav-active'); // Applies active text color via CSS rule
-                        textSpan.classList.remove(defaultFooterTextColor); // Remove default text color
+                        textSpan.classList.add('footer-nav-active');
+                        textSpan.classList.remove(defaultFooterTextColor);
                         // Icon uses active white
                         iconImg.classList.remove(colors.default);
                         iconImg.classList.add(colors.active);
@@ -351,11 +392,10 @@
 
             // Investment Community Tabs (Home Page)
              if (communityTabs.length > 0 && communityTabContent) {
-                // Initial content setup (shortened)
+                // Initial content setup (updated text - Step 5)
                 communityTabContent.innerHTML = `
                     <p class="text-zinc-300 text-sm">
-                        Discover investment-ready companies and potential partners. <br>
-                        Use filters for Country, Region, Industry or Impact criteria.
+                        Discover investment communities and potential co-investment partners with shared interests.
                     </p>`;
 
                 communityTabs.forEach(tab => {
@@ -367,13 +407,12 @@
 
                         const tabName = tab.dataset.tab;
                         let content = '';
-                        // Shortened content for tabs
+                        // Updated content for tabs
                         if (tabName === 'overview') {
                              content = `
                                 <p class="text-zinc-300 text-sm">
-                                    Discover investment-ready companies and potential partners. <br>
-                                    Use filters for Country, Region, Industry or Impact criteria.
-                                </p>`;
+                                    Discover investment communities and potential co-investment partners with shared interests.
+                                </p>`; // Step 5
                         } else if (tabName === 'insights') {
                             content = '<p class="text-zinc-300 text-sm">Explore market insights: sector reports, economic forecasts, and regulatory updates for investing in Kenya.</p>';
                         } else if (tabName === 'tips') {
