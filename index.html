@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="dark"> <head>
+<html lang="en" class="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenya Investment Portal</title>
@@ -8,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        // Configure Tailwind theme with new color scheme
+        // Configure Tailwind theme - updated icon colors to white shades
         tailwind.config = {
           darkMode: 'class',
           theme: {
@@ -18,14 +19,9 @@
                 'brand-green': '#10b981', // emerald-500
                 'brand-green-light': '#34d399', // emerald-400
                 'brand-green-dark': '#059669', // emerald-600
-                // New bright colors for footer icons
-                'icon-bright-cyan': '#67e8f9', // cyan-300
-                'icon-bright-lime': '#bef264', // lime-300
-                'icon-bright-amber': '#fcd34d', // amber-300
-                // Active state for new bright icons
-                'icon-active-cyan': '#a5f3fc', // cyan-200
-                'icon-active-lime': '#d9f99d', // lime-200
-                'icon-active-amber': '#fde68a', // amber-200
+                // Icon colors - White shades
+                'icon-default-white': '#f3f4f6', // gray-100 (Slightly off-white)
+                'icon-active-white': '#ffffff', // white
                 // Dark background shades (using Zinc)
                 'dark-bg': '#18181b', // zinc-900
                 'dark-card': '#27272a', // zinc-800
@@ -42,6 +38,7 @@
         /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent body scroll when container is h-screen */
         }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -68,34 +65,47 @@
         /* Style for active footer button text in dark mode - Green */
         .dark .footer-nav-active span {
              color: theme('colors.brand-green-light');
-             font-weight: 600;
+             /* font-semibold is now applied directly to the span */
         }
+        /* Style for active footer button icon */
+         .dark .footer-nav-active img {
+             color: theme('colors.icon-active-white');
+         }
+
         /* Page visibility */
         .page { display: none; flex-grow: 1; width: 100%; }
         .page-active { display: block; }
         .page-content { padding-top: 1rem; padding-bottom: 1rem; }
     </style>
 </head>
-<body class="bg-dark-bg text-dark-text"> <div class="container mx-auto max-w-md p-4 min-h-screen flex flex-col border border-dark-border rounded-lg shadow-lg bg-dark-card"> <header class="grid grid-cols-3 items-center mb-2 flex-shrink-0">
+<body class="bg-dark-bg text-dark-text">
+
+    <div class="container mx-auto max-w-md p-4 h-screen flex flex-col border border-dark-border rounded-lg shadow-lg bg-dark-card">
+
+        <header class="grid grid-cols-3 items-center mb-2 flex-shrink-0">
             <div class="flex justify-start">
-                 <button id="home-button-header" class="border border-emerald-500 bg-emerald-600 text-white font-semibold py-1 px-3 rounded-lg shadow hover:bg-emerald-700 transition duration-150 text-sm"> HOME
+                 <button id="home-button-header" class="border border-emerald-500 bg-emerald-600 text-white font-semibold py-1 px-3 rounded-lg shadow hover:bg-emerald-700 transition duration-150 text-sm">
+                    HOME
                  </button>
             </div>
             <div class="flex justify-center">
                  <img src="data:image/png;base64,PASTE_YOUR_BASE64_ENCODED_LOGO_DATA_HERE"
                       alt="New Wind Logo"
                       class="h-8 w-auto rounded"
-                      onerror="this.onerror=null; this.src='https://placehold.co/100x30/10b981/ffffff?text=New+Wind';"> </div>
+                      onerror="this.onerror=null; this.src='https://placehold.co/100x30/10b981/ffffff?text=New+Wind';">
+            </div>
             <div class="flex items-center justify-end">
-                <button id="messages-button" class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow hover:bg-emerald-700 transition duration-150 flex-shrink-0" aria-label="Messages"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg" alt="Messages" class="w-5 h-5"/>
+                <button id="messages-button" class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow hover:bg-emerald-700 transition duration-150 flex-shrink-0" aria-label="Messages">
+                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mail.svg" alt="Messages" class="w-5 h-5"/>
                 </button>
             </div>
         </header>
 
         <div class="text-center mb-4 flex-shrink-0">
-             <span class="text-sm text-muted">Good afternoon, Kenya!</span> </div>
+             <span class="text-sm text-muted">Good afternoon, Kenya!</span>
+        </div>
 
-        <div id="page-container" class="flex-grow flex flex-col overflow-y-auto">
+        <div id="page-container" class="flex-grow flex flex-col overflow-y-auto hide-scrollbar">
 
             <div id="home-page" class="page page-active">
                 <main class="page-content">
@@ -131,29 +141,16 @@
 
                     <section class="mb-8">
                         <h2 class="text-lg font-semibold mb-3 p-2 bg-zinc-700 text-emerald-300 rounded-lg">YOUR INVESTMENT COMMUNITY</h2>
-                        <div class="flex space-x-6 border-b border-zinc-600 mb-4"> <button class="community-tab py-2 px-1 text-zinc-400 hover:text-emerald-300 tab-active" data-tab="overview">OVERVIEW</button>
+                        <div class="flex space-x-6 border-b border-zinc-600 mb-4">
+                            <button class="community-tab py-2 px-1 text-zinc-400 hover:text-emerald-300 tab-active" data-tab="overview">OVERVIEW</button>
                             <button class="community-tab py-2 px-1 text-zinc-500 hover:text-emerald-300" data-tab="insights">MARKET INSIGHTS</button>
                             <button class="community-tab py-2 px-1 text-zinc-500 hover:text-emerald-300" data-tab="tips">TIPS</button>
                         </div>
-                        <div id="community-tab-content" class="p-4 bg-zinc-700 rounded-lg border border-zinc-600 min-h-[150px]"> <p class="text-zinc-400 text-sm mb-4">Find companies and partners based on your criteria.</p>
-                            <div class="grid grid-cols-2 gap-4 text-sm">
-                                <div>
-                                    <h4 class="font-semibold text-zinc-300 mb-2">Companies</h4>
-                                    <ul class="space-y-1 text-zinc-400">
-                                        <li>› Filter by Region</li>
-                                        <li>› Filter by Industry</li>
-                                        <li>› Filter by High ROI Potential</li>
-                                        <li>› Filter by High Impact</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-zinc-300 mb-2">Partners</h4>
-                                     <ul class="space-y-1 text-zinc-400">
-                                        <li>› Filter by Region</li>
-                                        <li>› Filter by Industry</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div id="community-tab-content" class="p-4 bg-zinc-700 rounded-lg border border-zinc-600 min-h-[100px]">
+                            <p class="text-zinc-300 text-sm">
+                                Discover investment-ready companies and potential partners. <br>
+                                Use filters for Region, Industry, ROI, and Impact criteria.
+                            </p>
                         </div>
                     </section>
 
@@ -172,7 +169,7 @@
             <div id="messages-page" class="page">
                 <main class="page-content">
                     <h2 class="text-xl font-semibold mb-4 text-emerald-300">Messages</h2>
-                    <div class="space-y-4">
+                     <div class="space-y-4">
                         <div class="p-4 bg-card border border-card rounded-lg shadow hover:bg-zinc-700 transition duration-150 cursor-pointer">
                             <div class="flex justify-between items-center mb-1">
                                 <span class="font-semibold text-zinc-200">Deal Room Alert</span>
@@ -251,19 +248,14 @@
                 </main>
             </div>
 
-        </div> <footer class="border-t border-dark-border pt-4 mt-auto flex-shrink-0">
-            <nav class="flex justify-around">
-                <button id="kenya-deal-rooms-button" data-page="kenya-deal-rooms-page" class="footer-nav-button flex flex-col items-center text-center text-xs w-1/3 group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layout-list.svg" alt="Deal Rooms" class="w-6 h-6 mb-1 text-icon-bright-cyan group-hover:text-icon-active-cyan"/>
-                    <span class="text-zinc-400 group-hover:text-brand-green-light">KENYA DEAL ROOMS</span>
+        </div> <footer class="border-t border-dark-border pt-2 pb-1 mt-auto flex-shrink-0"> <nav class="flex justify-around items-stretch"> <button id="kenya-deal-rooms-button" data-page="kenya-deal-rooms-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/layout-list.svg" alt="Deal Rooms" class="w-6 h-6 mb-1 text-icon-default-white"/>
+                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">KENYA DEAL ROOMS</span>
                 </button>
-                <button id="state-backed-button" data-page="state-backed-page" class="footer-nav-button flex flex-col items-center text-center text-xs w-1/3 group">
-                    <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/building-2.svg" alt="State-Backed Companies" class="w-6 h-6 mb-1 text-icon-bright-lime group-hover:text-icon-active-lime"/>
-                    <span class="text-zinc-400 group-hover:text-brand-green-light">STATE-BACKED COS.</span>
+                <button id="state-backed-button" data-page="state-backed-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/building-2.svg" alt="State-Backed Companies" class="w-6 h-6 mb-1 text-icon-default-white"/>
+                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">STATE-BACKED COS.</span>
                 </button>
-                <button id="notifications-button" data-page="notifications-page" class="footer-nav-button flex flex-col items-center text-center text-xs w-1/3 group">
-                     <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bell.svg" alt="Notifications" class="w-6 h-6 mb-1 text-icon-bright-amber group-hover:text-icon-active-amber"/>
-                     <span class="text-zinc-400 group-hover:text-brand-green-light">NOTIFICATIONS</span>
+                <button id="notifications-button" data-page="notifications-page" class="footer-nav-button flex flex-col items-center justify-center text-center text-xs w-1/3 group hover:bg-zinc-700 rounded-lg p-2 transition-colors duration-150"> <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bell.svg" alt="Notifications" class="w-6 h-6 mb-1 text-icon-default-white"/>
+                    <span class="text-zinc-300 font-semibold group-hover:text-brand-green-light">NOTIFICATIONS</span>
                 </button>
             </nav>
         </footer>
@@ -272,18 +264,29 @@
         document.addEventListener('DOMContentLoaded', () => {
             const pages = document.querySelectorAll('.page');
             const homeButtonHeader = document.getElementById('home-button-header');
-            const messagesButton = document.getElementById('messages-button'); // Still links to generic messages page
+            const messagesButton = document.getElementById('messages-button');
             const footerNavButtons = document.querySelectorAll('.footer-nav-button');
             const communityTabs = document.querySelectorAll('.community-tab');
             const communityTabContent = document.getElementById('community-tab-content');
 
-            // Updated icon colors mapping for the new footer
+            // Updated icon colors mapping to use white shades
             const iconColors = {
-                'kenya-deal-rooms-page': { default: 'text-icon-bright-cyan', active: 'text-icon-active-cyan' },
-                'state-backed-page': { default: 'text-icon-bright-lime', active: 'text-icon-active-lime' },
-                'notifications-page': { default: 'text-icon-bright-amber', active: 'text-icon-active-amber' }
+                'kenya-deal-rooms-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' },
+                'state-backed-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' },
+                'notifications-page': { default: 'text-icon-default-white', active: 'text-icon-active-white' }
             };
-             const defaultIconColor = 'text-zinc-400'; // Fallback
+             // Define all possible icon color classes for robust removal
+             const allIconColorClasses = [
+                'text-icon-default-white', 'text-icon-active-white',
+                // Include old/other classes just in case, for cleanup
+                 'text-icon-default-green', 'text-icon-active-green',
+                'text-icon-bright-cyan', 'text-icon-active-cyan',
+                'text-icon-bright-lime', 'text-icon-active-lime',
+                'text-icon-bright-amber', 'text-icon-active-amber'
+             ];
+
+             const defaultFooterTextColor = 'text-zinc-300'; // Default is lighter
+             const activeFooterTextColor = 'text-brand-green-light'; // Active text color
 
             // --- Page Navigation Function ---
             function showPage(pageId) {
@@ -302,24 +305,30 @@
                     const buttonPageId = button.dataset.page;
                     const textSpan = button.querySelector('span');
                     const iconImg = button.querySelector('img');
-                    const colors = iconColors[buttonPageId] || { default: defaultIconColor, active: 'text-brand-green-light' };
+                    // Use the updated iconColors map (all white)
+                    const colors = iconColors[buttonPageId] || { default: 'text-icon-default-white', active: 'text-icon-active-white' };
 
                     // Reset styles
-                    textSpan.classList.remove('footer-nav-active', 'text-brand-green-light', 'font-semibold');
-                    textSpan.classList.add('text-zinc-400');
-                    iconImg.classList.remove(colors.active);
-                    Object.values(iconColors).forEach(c => { // Robust reset
-                         iconImg.classList.remove(c.default, c.active);
-                    });
+                    textSpan.classList.remove('footer-nav-active', activeFooterTextColor); // Remove active text color
+                    textSpan.classList.add(defaultFooterTextColor); // Ensure default text color
+
+                    // Robustly remove all potential icon color classes
+                    iconImg.classList.remove(...allIconColorClasses);
+                    // Add the correct default white class
                     iconImg.classList.add(colors.default);
+
+                    // Remove active background if applied previously (optional)
+                    button.classList.remove('bg-zinc-700'); // Example active background class
 
                     // Apply active styles
                     if (buttonPageId === pageId) {
-                        textSpan.classList.add('footer-nav-active');
-                        textSpan.classList.remove('text-zinc-400');
-                        textSpan.classList.add('text-brand-green-light', 'font-semibold');
+                        textSpan.classList.add('footer-nav-active'); // Applies active text color via CSS rule
+                        textSpan.classList.remove(defaultFooterTextColor); // Remove default text color
+                        // Icon uses active white
                         iconImg.classList.remove(colors.default);
                         iconImg.classList.add(colors.active);
+                        // Optionally add an active background
+                        // button.classList.add('bg-zinc-700');
                     }
                 });
 
@@ -330,7 +339,7 @@
             if(homeButtonHeader) {
                 homeButtonHeader.addEventListener('click', () => showPage('home-page'));
             }
-            if(messagesButton) { // Messages button still goes to the generic messages page
+            if(messagesButton) {
                 messagesButton.addEventListener('click', () => showPage('messages-page'));
             }
             footerNavButtons.forEach(button => {
@@ -342,40 +351,33 @@
 
             // Investment Community Tabs (Home Page)
              if (communityTabs.length > 0 && communityTabContent) {
+                // Initial content setup (shortened)
+                communityTabContent.innerHTML = `
+                    <p class="text-zinc-300 text-sm">
+                        Discover investment-ready companies and potential partners. <br>
+                        Use filters for Region, Industry, ROI, and Impact criteria.
+                    </p>`;
+
                 communityTabs.forEach(tab => {
                     tab.addEventListener('click', () => {
                         communityTabs.forEach(t => t.classList.remove('tab-active'));
-                        communityTabs.forEach(t => t.classList.add('text-zinc-500')); // Reset color
+                        communityTabs.forEach(t => t.classList.add('text-zinc-500'));
                         tab.classList.add('tab-active');
                         tab.classList.remove('text-zinc-500');
 
                         const tabName = tab.dataset.tab;
                         let content = '';
+                        // Shortened content for tabs
                         if (tabName === 'overview') {
                              content = `
-                                <p class="text-zinc-400 text-sm mb-4">Find companies and partners based on your criteria.</p>
-                                <div class="grid grid-cols-2 gap-4 text-sm">
-                                    <div>
-                                        <h4 class="font-semibold text-zinc-300 mb-2">Companies</h4>
-                                        <ul class="space-y-1 text-zinc-400">
-                                            <li>› Filter by Region</li>
-                                            <li>› Filter by Industry</li>
-                                            <li>› Filter by High ROI Potential</li>
-                                            <li>› Filter by High Impact</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-zinc-300 mb-2">Partners</h4>
-                                         <ul class="space-y-1 text-zinc-400">
-                                            <li>› Filter by Region</li>
-                                            <li>› Filter by Industry</li>
-                                        </ul>
-                                    </div>
-                                </div>`;
+                                <p class="text-zinc-300 text-sm">
+                                    Discover investment-ready companies and potential partners. <br>
+                                    Use filters for Region, Industry, ROI, and Impact criteria.
+                                </p>`;
                         } else if (tabName === 'insights') {
-                            content = '<p class="text-zinc-400 text-sm">Market insights relevant to investing in Kenya will appear here. This could include sector reports, economic forecasts, and regulatory updates.</p>';
+                            content = '<p class="text-zinc-300 text-sm">Explore market insights: sector reports, economic forecasts, and regulatory updates for investing in Kenya.</p>';
                         } else if (tabName === 'tips') {
-                            content = '<p class="text-zinc-400 text-sm">Tips for navigating the investment landscape in Kenya, including legal advice summaries, cultural notes, and success stories.</p>';
+                            content = '<p class="text-zinc-300 text-sm">Get tips for navigating Kenya\'s investment landscape: legal summaries, cultural notes, and success stories.</p>';
                         }
                         communityTabContent.innerHTML = content;
                     });
